@@ -1,0 +1,16 @@
+<app-create-offre (create)="createOffre()"></app-create-offre>
+
+<mat-card *ngFor="let offre of offres$ | async">
+ <!--  <button *ngIf="offre.user === userId" mat-icon-button>
+        <mat-icon (click)="delete(offre.id)" color="warn">delete</mat-icon>
+    </button> -->
+    <div class="offre-titre">
+        {{ offre.titre }}
+    </div>
+    <div class="offre-meta">
+        {{ offre.dateCreation }}
+    </div>
+    <div class="offre-desc">
+        {{ offre.description }}
+    </div>
+</mat-card>

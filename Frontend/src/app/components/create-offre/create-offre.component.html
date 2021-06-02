@@ -1,0 +1,31 @@
+<button (click)="isOpen = !isOpen" mat-raised-button color="accent">
+    <mat-icon>Ajouter</mat-icon>Créer une offre
+  </button>
+  <form
+  *ngIf="isOpen"
+  [formGroup]="form"
+  #formDirective="ngForm"
+  (ngSubmit)="onSubmit(form.value)"
+  novalidate
+>   
+    <mat-form-field>
+      <mat-label>Titre de l'offre</mat-label>
+      <input matInput formControlName="titre" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Description : </mat-label>
+      <input
+        matInput
+        formControlName="description"
+      />
+    </mat-form-field>
+    <button
+      color="accent"
+      [disabled]="!form.valid"
+      mat-raised-button
+      type="submit"
+    >
+      <span>Ajouter</span>
+    </button> 
+
+</form>
